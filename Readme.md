@@ -1,4 +1,4 @@
-Vaiu Restaurant Booking Voice Agent
+**Vaiu Restaurant Booking Voice Agent**
 
 A fully voice-enabled AI agent that books restaurant tables using natural conversation.
 Built for the Vaiu AI Software Developer Internship Assignment, this project demonstrates full-stack development, intelligent voice processing, weather integration, double-booking prevention, clean UI, analytics dashboard, and email confirmation.
