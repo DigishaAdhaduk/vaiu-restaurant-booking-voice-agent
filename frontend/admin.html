@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vaiu Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #121826;
+    }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 240px;
+      background: #ffffff;
+      border-right: 1px solid #e3e7f0;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #192166;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: #6c7280;
+    }
+
+    .nav-section-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9aa0b2;
+      margin-bottom: 8px;
+    }
+
+    .nav-item {
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #4b5162;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-item.active {
+      background: #192166;
+      color: #ffffff;
+    }
+
+    .nav-item span.badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(25, 33, 102, 0.08);
+      color: #192166;
+    }
+
+    .main {
+      flex: 1;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .main-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .main-subtitle {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: rgba(25, 33, 102, 0.06);
+      color: #192166;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    button.btn {
+      border: none;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #192166;
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(25, 33, 102, 0.18);
+    }
+
+    button.btn-outline {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      color: #111827;
+      box-shadow: none;
+    }
+
+    button.btn:hover {
+      filter: brightness(0.96);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 16px 16px 14px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .card-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #9ca3af;
+      margin-bottom: 8px;
+    }
+
+    .card-value {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .card-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.08);
+      color: #15803d;
+    }
+
+    .charts-row {
+      display: grid;
+      grid-template-columns: 2fr 1.6fr;
+      gap: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .card-header h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .card-header span {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .table-card {
+      margin-top: 4px;
+    }
+
+    .table-wrapper {
+      max-height: 340px;
+      overflow: auto;
+      margin-top: 8px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      background: #fff;
+    }
+
+    thead {
+      background: #f9fafb;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    th {
+      font-weight: 600;
+      font-size: 11px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    tr:hover td {
+      background: #f9fafb;
+    }
+
+    .status-pill {
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      text-transform: capitalize;
+    }
+
+    .status-pill.confirmed {
+      background: rgba(16, 185, 129, 0.08);
+      color: #047857;
+    }
+
+    .status-pill.cancelled {
+      background: rgba(239, 68, 68, 0.08);
+      color: #b91c1c;
+    }
+
+    .status-pill.pending {
+      background: rgba(234, 179, 8, 0.08);
+      color: #92400e;
+    }
+
+    .btn-small {
+      border: none;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 11px;
+      cursor: pointer;
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .empty-state {
+      font-size: 13px;
+      color: #9ca3af;
+      padding: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 960px) {
+      .layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .main {
+        padding: 16px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .charts-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Vaiu Admin</div>
+        <div class="brand-sub">Restaurant Booking Voice Agent</div>
+      </div>
+
+      <div>
+        <div class="nav-section-title">Overview</div>
+        <div class="nav-item active">
+          <span>Dashboard</span>
+          <span class="badge" id="navTotalBookings">0</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div>
+          <div class="main-title">Today’s Booking Overview</div>
+          <div class="main-subtitle">
+            Live view of all reservations coming from your voice agent.
+          </div>
+        </div>
+        <div class="top-actions">
+          <span class="pill" id="tablesInfo">10 tables · real-time</span>
+          <button class="btn-outline btn" id="exportCsvBtn">⬇ Export CSV</button>
+        </div>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <div class="card-title">Total Bookings</div>
+          <div class="card-value" id="statTotalBookings">0</div>
+          <div class="card-meta">
+            All-time reservations captured via the voice agent.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Upcoming (Active)</div>
+          <div class="card-value" id="statActiveBookings">0</div>
+          <div class="card-meta">
+            Confirmed bookings with future dates and times.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Cancelled</div>
+          <div class="card-value" id="statCancelledBookings">0</div>
+          <div class="card-meta">
+            Reservations cancelled by staff or customers.
+          </div>
+        </div>
+      </section>
+
+      <section class="charts-row">
+        <div class="card">
+          <div class="card-header">
+            <h3>Bookings per Day</h3>
+            <span>Last 30 days</span>
+          </div>
+          <canvas id="bookingsPerDayChart" height="180"></canvas>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Popular Cuisines</h3>
+            <span>Based on confirmed bookings</span>
+          </div>
+          <canvas id="cuisineChart" height="180"></canvas>
+        </div>
+      </section>
+
+      <section class="card table-card">
+        <div class="card-header">
+          <h3>All Bookings</h3>
+          <span id="tableSummary">Loading…</span>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Guest</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Table</th>
+                <th>Cuisine</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="bookingsTableBody">
+              <tr>
+                <td colspan="8" class="empty-state">Fetching bookings…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./admin.js"></script>
+</body>
+</html>
