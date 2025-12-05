@@ -45,3 +45,6 @@ Approach: docs/APPROACH.md
 
 📊 Admin Dashboard
 frontend/admin.html
+
+Demo Video: 
+https://drive.google.com/file/d/15AvB-NyjMsBvTi-Q4O1UTNqPUJXOwc_1/view?usp=sharing
