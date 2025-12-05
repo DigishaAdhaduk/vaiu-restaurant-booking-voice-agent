@@ -46,5 +46,16 @@ Approach: docs/APPROACH.md
 📊 Admin Dashboard
 frontend/admin.html
 
-Demo Video: 
-https://drive.google.com/file/d/15AvB-NyjMsBvTi-Q4O1UTNqPUJXOwc_1/view?usp=sharing
+## 🎥 Demo Video
+
+Watch the full demo video here:  
+👉 https://drive.google.com/file/d/15AvB-NyjMsBvTi-Q4O1UTNqPUJXOwc_1/view?usp=sharing
+
+This video demonstrates:
+- Live voice interaction  
+- NLP-style understanding  
+- Weather-based seating recommendations  
+- Double-booking prevention  
+- Email confirmation  
+- Admin dashboard & analytics  
+
