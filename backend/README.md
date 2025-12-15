@@ -1,47 +1,92 @@
-**Backend – Vaiu Restaurant Booking Agent**
+# ⚙️ Backend – Vaiu Restaurant Booking Voice Agent
 
-Node.js + Express backend powering:
+This directory contains the Node.js and Express backend that powers the voice-based restaurant booking system.
 
-Bookings API
+---
 
-Weather API integration
+## 🚀 Responsibilities
 
-Email service
+- Booking creation and management APIs
+- Table availability and conflict prevention logic
+- Weather API integration for seating recommendations
+- Email booking confirmation using SMTP
+- Admin analytics and reporting
 
-Table availability engine
+---
 
-Admin analytics
+## 🛠 Tech Stack
 
-📁 Folder Structure
-index.js
-config/database.js
-controllers/bookingController.js
-models/Booking.js
-routes/bookings.js
-services/
-   ├── weatherService.js
-   ├── emailService.js
-   ├── availabilityService.js
-utils/
-   └── bookingIdGenerator.js
+- Node.js
+- Express.js
+- MongoDB & Mongoose
+- REST APIs
+- SMTP Email Service
+- External Weather API
 
-🔌 API Routes
+---
 
-Full documentation here:
-👉 docs/API_REFERENCE.md
+## 📁 Folder Structure
 
-▶️ Running the Backend
+backend/
+│
+├── index.js
+├── config/
+│   └── database.js
+│
+├── controllers/
+│   └── bookingController.js
+│
+├── models/
+│   └── Booking.js
+│
+├── routes/
+│   └── bookings.js
+│
+├── services/
+│   ├── weatherService.js
+│   ├── emailService.js
+│   └── availabilityService.js
+│
+└── utils/
+    └── bookingIdGenerator.js
+
+---
+
+## 🔌 API Documentation
+
+Complete API reference available at:
+docs/API_REFERENCE.md
+
+---
+
+## ▶️ Running the Backend
+
+Install dependencies:
 npm install
+
+Start the development server:
 npm run dev
 
+---
 
-Environment variables found in .env:
+## 🔐 Environment Variables
+
+Create a `.env` file with the following variables:
 
 PORT=
 MONGODB_URI=
 WEATHER_API_KEY=
+
 SMTP_HOST=
 SMTP_PORT=
 SMTP_USER=
 SMTP_PASS=
 SMTP_FROM=
+
+---
+
+## ✨ Architecture Notes
+
+- Service-based architecture
+- Clear separation of concerns
+- Designed for scalability and easy extension
