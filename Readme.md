@@ -1,61 +1,69 @@
-**Vaiu Restaurant Booking Voice Agent**
+# 🎙 Vaiu Restaurant Booking Voice Agent
 
-A fully voice-enabled AI agent that books restaurant tables using natural conversation.
-Built for the Vaiu AI Software Developer Internship Assignment, this project demonstrates full-stack development, intelligent voice processing, weather integration, double-booking prevention, clean UI, analytics dashboard, and email confirmation.
+A fully voice-enabled restaurant booking agent that allows users to book tables using natural conversational speech.
 
-🚀 Features
+Built for the **Vaiu AI – Software Developer Internship Assignment**, this project demonstrates end-to-end full-stack development, intelligent voice processing, real-world booking logic, and clean UI design.
 
-Live voice interaction (auto-listening)
+---
 
-Smart NLP-style understanding (no GPT needed)
+## 🚀 Features
 
-Hindi + English mixed input support
+- Live voice interaction with auto-listening conversation flow  
+- NLP-style intent understanding (rule-based, no GPT used)  
+- Hindi + English mixed-language input support  
+- Weather-based seating recommendations  
+- Table availability engine (10 tables per time slot)  
+- Double-booking prevention  
+- Email booking confirmation using SMTP  
+- Admin dashboard with analytics and CSV export  
+- Clean white UI with chat and form synchronization  
 
-Weather-based seating recommendation
+---
 
-Table availability logic (10 tables per slot)
+## 🧠 Approach
 
-Double-booking prevention
+The system is designed to feel conversational yet deterministic, focusing on predictable booking outcomes, clear user feedback, and minimal friction in voice-driven flows.
 
-Email confirmation using SMTP
+Detailed explanation available at:
+`docs/APPROACH.md`
 
-Admin dashboard with analytics + CSV export
+---
 
-Clean white UI with chat + form synchronization
+## ⚙️ Setup Instructions
 
-🧠 Approach
+Complete setup steps for both frontend and backend:
+`docs/SETUP.md`
 
-See full details here:
-👉 docs/APPROACH.md
+---
 
-⚙️ Setup Instructions
+## 📚 Documentation
 
-Both backend + frontend instructions are here:
-👉 docs/SETUP.md
+- Features: `docs/FEATURES.md`  
+- Architecture: `docs/ARCHITECTURE.md`  
+- API Reference: `docs/API_REFERENCE.md`  
+- Approach: `docs/APPROACH.md`  
 
-📚 Documentation
+---
 
-Features: docs/FEATURES.md
+## 📊 Admin Dashboard
 
-Architecture: docs/ARCHITECTURE.md
+Access the admin panel via:
+`frontend/admin.html`
 
-API Reference: docs/API_REFERENCE.md
+Includes booking analytics, usage insights, and CSV export.
 
-Approach: docs/APPROACH.md
-
-📊 Admin Dashboard
-frontend/admin.html
+---
 
 ## 🎥 Demo Video
 
-Watch the full demo video here:  
-👉 https://drive.google.com/file/d/15AvB-NyjMsBvTi-Q4O1UTNqPUJXOwc_1/view?usp=sharing
+Watch the complete demo here:  
+https://drive.google.com/file/d/15AvB-NyjMsBvTi-Q4O1UTNqPUJXOwc_1/view
 
-This video demonstrates:
-- Live voice interaction  
-- NLP-style understanding  
-- Weather-based seating recommendations  
-- Double-booking prevention  
-- Email confirmation  
-- Admin dashboard & analytics  
+---
 
+## ✨ Highlights
+
+- Logic-driven intelligence without external AI dependency  
+- Real-world booking constraints handled cleanly  
+- Clear separation of frontend, backend, and services  
+- Production-style project structure
