@@ -1,44 +1,47 @@
-**Frontend – Vaiu Restaurant Booking Agent**
+# 🎨 Frontend – Vaiu Restaurant Booking Voice Agent
 
-This folder contains the voice-enabled UI for booking restaurant tables.
+This directory contains the voice-enabled frontend UI for booking restaurant tables using natural conversation.
 
-🎙 Voice Agent
+---
 
-Uses Web Speech API for:
+## 🎙 Voice Agent
 
-Speech-to-Text
+The frontend uses the Web Speech API to provide:
 
-Text-to-Speech
+- Speech-to-Text for capturing user input
+- Text-to-Speech for agent responses
+- Auto-continuation of conversation
+- Ability to repeat the last agent response
+- Error handling with retry prompts (e.g., “Say that again…”)
 
-Auto-continue conversation
+---
 
-Repeating last agent response
+## 🧠 Intelligent UX
 
-Error handling (“Say that again…”)
+- Automatically fills booking form fields from voice input
+- Allows users to manually correct any field
+- Chat-style UI showing both user and agent messages
+- Booking confirmation displayed as a card
+- Clean white UI with fully responsive design
 
-🧠 Intelligent UX
+---
 
-Autofills form fields from speech
+## 📁 File Structure
 
-User can correct fields manually
+frontend/
+│
+├── index.html    # Main voice-enabled booking UI
+├── app.js        # Voice logic and conversation engine
+├── admin.html    # Admin dashboard UI
+└── style.css     # UI styling (if used)
 
-Chat UI shows agent + user messages
+---
 
-Booking confirmation shown as card
+## ▶️ Running the Frontend
 
-White modern UI with responsive design
+No installation or build steps required.
 
-📄 Files
-index.html       → Main UI
-app.js           → Voice logic + conversation engine
-admin.html       → Admin dashboard
-style.css        → UI styling (if used)
-
-▶️ Running the Frontend
-
-Simply open:
-
+Open directly in the browser:
 frontend/index.html
 
-
-Use Chrome for best speech recognition.
+For best speech recognition performance, use **Google Chrome**.
