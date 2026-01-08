@@ -26,17 +26,6 @@ The frontend uses the Web Speech API to provide:
 
 ---
 
-## 📁 File Structure
-
-frontend/
-│
-├── index.html    # Main voice-enabled booking UI
-├── app.js        # Voice logic and conversation engine
-├── admin.html    # Admin dashboard UI
-└── style.css     # UI styling (if used)
-
----
-
 ## ▶️ Running the Frontend
 
 No installation or build steps required.
