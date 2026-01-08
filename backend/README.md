@@ -25,32 +25,6 @@ This directory contains the Node.js and Express backend that powers the voice-ba
 
 ---
 
-📁 backend/
-│
-├── index.js
-│
-├── config/
-│   └── database.js
-│
-├── controllers/
-│   └── bookingController.js
-│
-├── models/
-│   └── Booking.js
-│
-├── routes/
-│   └── bookings.js
-│
-├── services/
-│   ├── weatherService.js
-│   ├── emailService.js
-│   └── availabilityService.js
-│
-└── utils/
-    └── bookingIdGenerator.js
-
----
-
 ## 🔌 API Documentation
 
 Complete API reference available at:
