@@ -25,13 +25,6 @@ This directory contains the Node.js and Express backend that powers the voice-ba
 
 ---
 
-## 🔌 API Documentation
-
-Complete API reference available at:
-docs/API_REFERENCE.md
-
----
-
 ## ▶️ Running the Backend
 
 Install dependencies:
