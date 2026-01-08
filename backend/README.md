@@ -25,11 +25,10 @@ This directory contains the Node.js and Express backend that powers the voice-ba
 
 ---
 
-## 📁 Folder Structure
-
-backend/
+📁 backend/
 │
 ├── index.js
+│
 ├── config/
 │   └── database.js
 │
