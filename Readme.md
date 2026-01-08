@@ -24,25 +24,6 @@ Built for the **Vaiu AI – Software Developer Internship Assignment**, this pro
 
 The system is designed to feel conversational yet deterministic, focusing on predictable booking outcomes, clear user feedback, and minimal friction in voice-driven flows.
 
-Detailed explanation available at:
-`docs/APPROACH.md`
-
----
-
-## ⚙️ Setup Instructions
-
-Complete setup steps for both frontend and backend:
-`docs/SETUP.md`
-
----
-
-## 📚 Documentation
-
-- Features: `docs/FEATURES.md`  
-- Architecture: `docs/ARCHITECTURE.md`  
-- API Reference: `docs/API_REFERENCE.md`  
-- Approach: `docs/APPROACH.md`  
-
 ---
 
 ## 📊 Admin Dashboard
