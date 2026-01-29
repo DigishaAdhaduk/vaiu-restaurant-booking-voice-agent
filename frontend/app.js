@@ -1,8 +1,8 @@
 function parseSpokenDate(text) {
   const months = {
-    january: 1,
-    february: 2,
-    march: 3,
+    january: ,
+    february: ,
+    march: ,
     april: 4,
     may: 5,
     june: 6,
